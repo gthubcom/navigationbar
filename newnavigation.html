@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"href="../node_modules/bootstrap/dist/css/bootstrap.css">
+<style>
+    body{
+        background-color:cadetblue;
+    }
+.nav{
+    width:1024px;
+    height:100px;
+    margin:30px;
+    padding:10px;
+}
+li{
+    float:left;
+margin:30px;
+padding:0px;
+list-style:none;
+}
+a{
+    text-decoration:none;
+    font-weight:bold;
+    font-size:1.5em;
+    color:white;
+    transition: 1s;
+}
+a:hover{
+    font-size:30px;
+    color:darkred;
+    transition:0s;
+}
+input[type=text]{
+    color:white;
+    text-color:red;
+}
+input[type=text]:hover{
+    color:orange;
+    text-color:blue;
+}
+</style>
+    </head>
+    <body>
+        <div class="container">
+<header>
+<nav>
+    <menu>
+        <div class="btn-toolbar justify-content-between">
+            <div class="btn-group">
+    <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Faculty</a></li>
+        </ul>
+            </div>
+            <div class="btn-group">
+                <form class="form-inline row">
+            <input type="text"class="form-control input-group-prepend">
+            <input type="button"value="Login"class="input-group-append btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </menu>
+</nav>
+</header>
+        </div>
+    </body>
+</html>
