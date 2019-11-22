@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+       #popUp{
+           width:350px;
+           margin-top:50px;
+           margin-left:300px;
+           position:fixed;
+       }
+        </style>
+        <script>
+        function bodyload(){
+            document.getElementById("popUp").style.display="none";
+        }
+        function verify(){
+            document.getElementById("lblName").innerHTML="Hello.."+ document.getElementById("txtName").value;
+            document.getElementById("popUp").style.display="block"; 
+            var mealname="";
+            var adonname="";
+            var mealcost=0;
+            var adoncoast=0;
+            var burger=document.getElementById("kfcChik");
+            var bucket=document.getElementById("kfcBuck");
+            var sticks=document.getElementById("sticks");
+            var offer=document.getElementById("offer");
+            if(burger.checked){
+                mealname=burger.value;
+                mealcost=160;
+            }
+            if(bucket.checked){
+                mealname=bucket.value;
+                mealcost=200;
+            }
+            if(sticks.checked){
+                adonname+=sticks.value+ "<br>";
+                adoncost=80;
+                mealcost=mealcost+adoncost;
+            }
+            if(offer.checked){
+                adonname+=offer.value+ "<br>";
+                adoncost=60;
+                mealcost=mealcost+adoncost;
+            }
+            document.getElementById("lblMeal").innerHTML=mealname;
+            document.getElementById("lblAd").innerHTML=adonname;
+            document.getElementById("lblAmount").innerHTML = "You have to Pay :" + "&#8377;" + mealcost + "/-";
+        }
+        function closeClick(){
+            document.getElementById("popUp").style.display="none";
+        }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <div style="margin-top: 30px;" class="container text-center">
+            <div id="popUp">
+                    <div class="card">
+                        <div class="card-header">
+                    <h3 id="lblName"></h3>
+                    </div>
+                    <div class="card-body">
+                    <dl>
+                        <dt>Meal Name</dt>
+                        <dd id="lblMeal"></dd>
+                        <dt>AD-ON</dt>
+                        <dd id="lblAd"></dd>
+                    </dl>
+                    </div>
+                    <div class="card-footer">
+                    <h3 id="lblAmount"></h3>
+                    </div>
+                    <input type="button"value="OK"class="btn btn-success"onclick="closeClick()">
+                    </div>
+                </div>
+        <div class="container">
+                
+            <header>
+                <div>
+                    <img src="images/kfcbanner.jpg"class="img-thumbnail">
+                </div>
+                <div align="center"class="bg-danger"style="margin-top:20px;text:white;">
+                    <h2>Customer Details</h2>
+                   <table>
+                       <tr>
+                           <td><h3>Name</h3></td>
+                           <td><input type="text"class="form-control"id="txtName"></td>
+                       </tr>
+                   </table>
+                </div>
+            </header>
+            <section>
+                    <div style="margin-top: 20px;" class="bg-danger">
+                            <h2 align="center" class="text-white">Select a Meal</h2>
+                <div class="card-deck"style="margin-top:30px;">
+                    <div class="card">
+                     <div class="card-header">
+                      <h2>Chicken Burger</h2>
+                     </div>
+                     <div class="card-body">
+                    <img src="images/kfcchicken1.jpeg"width="500"height="400">
+                   <div>
+                        <input type="radio"name="kfc"value="kfcchicken"id="kfcChik"class="form-control">
+                   </div>
+                     </div>
+                     <div class="card-footer"align="center">
+                    <h3>&#8377;160 /-</h3>
+                     </div>
+                    </div>
+        <div class="card">
+                <div class="card-header">
+                    <h2>Chicken Bucket</h2>
+                </div>
+                <div class="card-body">
+                <img src="images/kfcchicken1.jpg"width="500"height="400">
+                <div>
+                    <input type="radio"name="kfc"value="kfcbucket"id="kfcBuck"class="form-control">
+                </div>
+                </div>
+                <div class="card-footer"align="center">
+                   <h3>&#8377;200 /-</h3>
+                </div>
+                </div>
+                </div>
+    </div>
+    <div style="margin-top:20px;"class="bg-danger">
+    <h2 class="text-white"align="center"> Select ADD-ON</h2>
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-header">
+                <h2>spicy sticks</h2>
+            </div>
+            <div class="card-body">
+                <img src="images/kfcsticks.jpg"width="500"height="400">
+                <input type="checkbox"value="kfcsticks"id="sticks"class="form-control">
+            </div>
+            <div class="card-footer">
+                <h3 align="center">&#8377;80/-</h3>
+            </div>
+        </div>
+   
+    <div class="card">
+            <div class="card-header">
+                <h2>spicy kfc food</h2>
+            </div>
+            <div class="card-body">
+                <img src="images/kfcbanner1.jpg"width="500"height="400">
+                <input type="checkbox"value="kfcoffers"id="offer"class="form-control">
+            </div>
+            <div class="card-footer">
+                <h3 align="center">&#8377;60/-</h3>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+<footer>
+    <div align="center">
+        <input type="button"class="btn btn-outline-primary"value="Place holder"onclick="verify()">
+    </div>
+</footer>
+
+</div>
+    </body>
+</html>
